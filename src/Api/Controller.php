@@ -1,6 +1,6 @@
 <?
 
-namespace Api;
+namespace Hack2020\Api;
 
 /**
  * Class Controller
@@ -36,7 +36,7 @@ Abstract Class Controller
     /**
      * @return mixed
      */
-    public function Run()
+    public static function Run()
     {
         $action = Router::getAction();
         $controller = Router::getControllerObject();

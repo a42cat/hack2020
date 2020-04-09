@@ -1,6 +1,6 @@
 <?
 
-namespace Api;
+namespace Hack2020\Api;
 
 Class Response
 {
@@ -8,7 +8,7 @@ Class Response
     {
         self::setHeaders();
         header('HTTP/1.1 200');
-        $arResponse = array_merge(['status' => 200], ['result' => $data]);
+        $arResponse = array_merge(['status' => 200], $data);
         $result = json_encode($arResponse, $options);
 
         if ($error = self::ckeckError()) {
@@ -63,11 +63,12 @@ Class Response
         die();
     }
 
-    public static function ServerError($message, $error = 500) {
+    public static function ServerError($message, $error = 500)
+    {
         self::setHeaders();
 
         $message = ($message) ? $message : 'Server error';
-        header('HTTP/1.1 '. $error);
+        header('HTTP/1.1 ' . $error);
         echo json_encode(['status' => $error, 'error' => $message]);
         die();
     }

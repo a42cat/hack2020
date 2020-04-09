@@ -1,6 +1,6 @@
 <?
 
-namespace Api;
+namespace Hack2020\Api;
 
 /**
  * Class Router

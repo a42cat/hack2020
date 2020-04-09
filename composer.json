@@ -1,14 +1,14 @@
 {
-  "minimum-stability" : "alpha",
-  "license" : "MIT",
-  "require": {
-    "php" : "7.3",
-    "ext-pdo" : "*",
-    "ext-json" : "*"
-  },
+    "minimum-stability": "alpha",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3",
+        "ext-pdo": "*",
+        "ext-json": "*"
+    },
     "autoload": {
         "psr-4": {
-            "Api\\": "Classes"
+            "Hack2020\\": "src"
         }
     }
 }

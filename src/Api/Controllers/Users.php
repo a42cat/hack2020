@@ -1,10 +1,10 @@
 <?
 
-namespace Api\Controllers;
+namespace Hack2020\Api\Controllers;
 
-use Api\Controller;
-use Api\DB;
-use Api\Response;
+use Hack2020\Api\Controller;
+use Hack2020\Api\DB;
+use Hack2020\Api\Response;
 
 /**
  * Class User
@@ -23,6 +23,8 @@ Class Users extends Controller
     public function GetUsers()
     {
         $users = [];
+
+        Response::ShowResult($this->response);
 
         $pdo = DB::getPdoConnect();
         $sql = 'SELECT * FROM '.self::TABLENAME_USERS;

@@ -1,9 +1,9 @@
 <?
-namespace Api\Controllers;
+namespace Hack2020\Api\Controllers;
 
-use Api\Controller;
-use Api\DB;
-use Api\Response;
+use Hack2020\Api\Controller;
+use Hack2020\Api\DB;
+use Hack2020\Api\Response;
 
 Class Games extends Controller {
 

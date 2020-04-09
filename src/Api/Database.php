@@ -1,6 +1,6 @@
 <?
 
-namespace Api;
+namespace Hack2020\Api;
 
 use PDO;
 use PDOException;

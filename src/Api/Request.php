@@ -1,6 +1,6 @@
 <?
 
-namespace Api;
+namespace Hack2020\Api;
 
 /**
  * Class Request
@@ -13,11 +13,11 @@ Class Request
      */
     protected static $instance;
     /**
-     * @var String
+     * @var string
      */
     protected static $realIp;
     /**
-     * @var Array
+     * @var array
      */
     protected $params;
 
