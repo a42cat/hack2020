@@ -53,14 +53,13 @@ Class Router
     {
 
         self::$controllerClass = false;
-        self::$controllerPath = __DIR__ . DIRECTORY_SEPARATOR . self::ROOT_DIR_CONTROLLERS . DIRECTORY_SEPARATOR . strtolower(self::$controller) . '.php';
+        self::$controllerPath = __DIR__ . DIRECTORY_SEPARATOR . self::ROOT_DIR_CONTROLLERS . DIRECTORY_SEPARATOR . self::$controller . '.php';
 
         if (!file_exists(self::$controllerPath)) {
-            //TODO Сделать языковые файлы
             //Response::BadRequest(Loc::getMessage('CLASS_NOT_FOUND', ['#OBJECT#' => ucfirst(parent::getController())]));
             Response::BadRequest('Controller not found');
         } else {
-            self::$controllerClass = __NAMESPACE__ . '\\' . self::ROOT_DIR_CONTROLLERS . '\\' . ucfirst(strtolower(self::$controller));
+            self::$controllerClass = __NAMESPACE__ . '\\' . self::ROOT_DIR_CONTROLLERS . '\\' . ucfirst(self::$controller);
         }
 
         return new self::$controllerClass;
@@ -92,18 +91,18 @@ Class Router
     public function GetControllerAndMethod()
     {
         self::$pathParts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        self::$apiPath = strtolower(current(self::$pathParts));
+        self::$apiPath = current(self::$pathParts);
         array_shift(self::$pathParts);
 
         // Get controller
         if (current(self::$pathParts)) {
-            self::$controller = strtolower(current(self::$pathParts));
+            self::$controller = current(self::$pathParts);
             array_shift(self::$pathParts);
         }
 
         // Get action
         if (current(self::$pathParts)) {
-            self::$action = strtolower(current(self::$pathParts));
+            self::$action = current(self::$pathParts);
             array_shift(self::$pathParts);
         }
     }
