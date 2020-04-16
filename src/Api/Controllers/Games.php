@@ -19,13 +19,15 @@ Class Games extends Controller {
     public function GetGames() {
         $games = [];
 
-        $pdo = DB::getPdoConnect();
-        $sql = 'SELECT * FROM '.self::TABLE_NAME_GAMES;
-        $result = $pdo->query($sql, \PDO::FETCH_ASSOC);
+        $connect = DB::getPdoConnect();
+        $sql = 'SELECT * FROM '.self::TABLE_NAME_GAMES.';';
+        $result = $connect->query($sql, \PDO::FETCH_ASSOC);
+
         foreach ($result as $row) {
-            $games[(INT)$row['id']] = $row;
+            $games[$row['id']] = $row;
         }
-        Response::ShowResult($games);
+        $this->response['result'] = $games;
+        Response::ShowResult($this->response);
     }
 
 }

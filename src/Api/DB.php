@@ -4,27 +4,29 @@ namespace Hack2020\Api;
 
 use PDO;
 use PDOException;
+use Hack2020\Api\Config;
 
 Abstract Class DB {
-    const DB_HOST = '127.0.0.1';
 
-    const DB_LOGIN = 'root';
-
-    const DB_PASSWORD = '123';
-
-    const DB_NAME = 'hack';
+    public static  function GetHost() {
+        $host = Config::DB_HOST;
+        if ($_SERVER['HTTP_HOST'] !== 'hometechcat.ru') {
+            $host .= ';port=3336;';
+        }
+        return $host;
+    }
 
     public static function getPdoConnect() {
-        $dsn = 'mysql:dbname='.self::DB_NAME.';host='.self::DB_HOST;
-        $user = self::DB_LOGIN;
-        $password = self::DB_PASSWORD;
+        $dsn = 'mysql:dbname='.Config::DB_NAME.';host='.self::GetHost();
+        //var_dump($dsn);
+        $user = Config::DB_USER;
+        $password = Config::DB_PASS;
 
         try {
             $pdo = new PDO($dsn, $user, $password);
+            return $pdo;
         } catch (PDOException $e) {
             Response::ServerError($e->getMessage(), 500);
         }
-
-        return new PDO($dsn, $user, $password);
     }
 }
