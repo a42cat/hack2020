@@ -23,7 +23,7 @@ Class Users extends Controller
     public function GetUsers()
     {
         $users = [];
-
+        $this->response['result'] = ['test' => 123];
         Response::ShowResult($this->response);
 
         $pdo = DB::getPdoConnect();
