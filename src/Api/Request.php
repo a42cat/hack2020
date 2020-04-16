@@ -66,13 +66,13 @@ Class Request
             'PARAMETERS' => self::getParameters()
         ];
 
-        if ($_SERVER['HTTP_AUTHORIZATION_TOKEN']) {
+        if (isset($_SERVER['HTTP_AUTHORIZATION_TOKEN'])) {
             $this->params['AUTHORIZATION_TOKEN'] = $_SERVER['HTTP_AUTHORIZATION_TOKEN'];
         }
-        if ($_SERVER['HTTP_AUTHORIZATION_LOGIN']) {
+        if (isset($_SERVER['HTTP_AUTHORIZATION_LOGIN'])) {
             $this->params['AUTHORIZATION_LOGIN'] = $_SERVER['HTTP_AUTHORIZATION_LOGIN'];
         }
-        if ($_SERVER['HTTP_AUTHORIZATION_PASSWORD']) {
+        if (isset($_SERVER['HTTP_AUTHORIZATION_PASSWORD'])) {
             $this->params['AUTHORIZATION_PASSWORD'] = $_SERVER['HTTP_AUTHORIZATION_PASSWORD'];
         }
 
