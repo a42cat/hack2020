@@ -1,9 +1,11 @@
 <?
 
-namespace Hack2020\Api;
+namespace Hack2020\Api\Core;
+
+use Hack2020\Api\Router;
 
 /**
- * Class Controller
+ * Class Controllers
  * @package Api
  */
 Abstract Class Controller
@@ -20,7 +22,7 @@ Abstract Class Controller
     protected $response;
 
     /**
-     * Controller constructor.
+     * Controllers constructor.
      */
     public function __construct()
     {

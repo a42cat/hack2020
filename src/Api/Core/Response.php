@@ -1,6 +1,6 @@
 <?
 
-namespace Hack2020\Api;
+namespace Hack2020\Api\Core;
 
 Class Response
 {

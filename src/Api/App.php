@@ -2,6 +2,8 @@
 
 namespace Hack2020\Api;
 
+use Hack2020\Api\Core\Request;
+
 /**
  * Class App
  * @package Api

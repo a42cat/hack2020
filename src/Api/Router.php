@@ -2,6 +2,8 @@
 
 namespace Hack2020\Api;
 
+use Hack2020\Api\Core\Response;
+
 /**
  * Class Router
  * @package Api
@@ -57,7 +59,7 @@ Class Router
 
         if (!file_exists(self::$controllerPath)) {
             //Response::BadRequest(Loc::getMessage('CLASS_NOT_FOUND', ['#OBJECT#' => ucfirst(parent::getController())]));
-            Response::BadRequest('Controller not found');
+            Response::BadRequest('Controllers not found');
         } else {
             self::$controllerClass = __NAMESPACE__ . '\\' . self::ROOT_DIR_CONTROLLERS . '\\' . ucfirst(self::$controller);
         }

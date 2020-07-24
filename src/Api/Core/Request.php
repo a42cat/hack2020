@@ -1,6 +1,8 @@
 <?
 
-namespace Hack2020\Api;
+namespace Hack2020\Api\Core;
+
+use Hack2020\Api\Router;
 
 /**
  * Class Request

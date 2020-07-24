@@ -1,9 +1,9 @@
 <?
 namespace Hack2020\Api\Controllers;
 
-use Hack2020\Api\Controller;
-use Hack2020\Api\DB;
-use Hack2020\Api\Response;
+use Hack2020\Api\Core\Controller;
+use Hack2020\Api\Core\DB;
+use Hack2020\Api\Core\Response;
 
 Class Games extends Controller {
 
@@ -26,6 +26,7 @@ Class Games extends Controller {
         foreach ($result as $row) {
             $games[$row['id']] = $row;
         }
+
         $this->response['result'] = $games;
         Response::ShowResult($this->response);
     }

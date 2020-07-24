@@ -1,10 +1,9 @@
 <?
 
-namespace Hack2020\Api;
+namespace Hack2020\Api\Core;
 
 use PDO;
 use PDOException;
-use Hack2020\Api\Config;
 
 Abstract Class DB {
 
